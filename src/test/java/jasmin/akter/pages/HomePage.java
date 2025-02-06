@@ -32,7 +32,7 @@ public class HomePage extends CommonMethods {
     })
     WebElement authorName;
 
-    @FindBys({@FindBy(xpath = "//a[text()='উপন্যাস']")
+    @FindBys({@FindBy(xpath = "//label[@for='category653']")
 
     })
     WebElement categorySelect;
