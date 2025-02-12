@@ -9,7 +9,6 @@ import jasmin.akter.utilities.ExtentFactory;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
 import java.io.IOException;
 
 public class HomePage_Test extends CommonMethods {
@@ -21,12 +20,13 @@ public class HomePage_Test extends CommonMethods {
     public void open_url() throws InterruptedException {
         PageDriver.getCurrentDriver().get(url);
         sleep();
+
         extent = ExtentFactory.getInstance();
         parentTest = extent.createTest("<p style=\"color:blue; font-size:14px\"><b>Menu</b></p>").assignAuthor("Jasmin Akter").assignDevice("Windows");
     }
 
     @Test
-    public void prothoma_Homepage() throws IOException, InterruptedException {
+    public void prothoma() throws IOException, InterruptedException {
         childTest = parentTest.createNode("<p style=\"color:blue; font-size:14px\"><b>Menu Click</b></p>");
         HomePage homePage = new HomePage(childTest);
         homePage.selectAuthor();
@@ -38,4 +38,3 @@ public class HomePage_Test extends CommonMethods {
         extent.flush();
     }
 }
-

@@ -11,7 +11,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.io.IOException;
 import java.time.Duration;
 
@@ -24,18 +23,18 @@ public class CartPage extends CommonMethods {
 
     //Xpath
 
-    @FindBys({@FindBy(xpath = "//a[text()='কালবেলা']")
+    @FindBys({@FindBy(xpath = "//a[contains(text(),'কালবেলা')]")
     })
     WebElement bookName;
 
-    @FindBy(xpath = "//button[text()='Add to Cart']")
+    @FindBy(xpath = "//a[@id='viewBuyURL']")
     WebElement addToCart;
 
-    @FindBy(xpath = "//a[@class='cart-icon']")
+    @FindBy(xpath = "(//img[@src='https://www.prothoma.com/images/frontend/cart_bag.png'])[1]")
     WebElement cartIcon;
 
-    @FindBy(xpath = "//button[text()='Proceed to Checkout']")
-    WebElement proceedToCheckout;
+    @FindBy(xpath = "(//a[@class='btn btn-primary bag']")
+    WebElement cart;
 
 
     // Report + Screenshot
@@ -67,26 +66,26 @@ public class CartPage extends CommonMethods {
 
     public void cart() throws IOException {
         try{
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 
-            test.info("Please click your Details options");
+            test.info("Please click your book name options.");
             bookName.click();
-            passCaseWithSC("Click on the Details options","details_click_success");
+            passCaseWithSC("Click on the book name","book_name_click_success");
 
             try {
-                test.info("Please Click Add to Cart options");
+                test.info("Please click add to Cart button.");
                 addToCart.click();
-                passCaseWithSC("Click on the Add to Cart options","addToCart_success");
+                passCaseWithSC("Click on the add to cart button","addToCart_success");
 
 
                 try{
                     test.info("Please show Add to Cart Icon");
                     new Actions(driver).moveToElement(cartIcon).build().perform();
-                    passCaseWithSC("Show  the Cart Icon","carticon_success");
+                    passCaseWithSC("Show  the Cart Icon","cartIcon_show_success");
 
                     try {
                         test.info("Please Click  Cart Options");
-                        proceedToCheckout.click();
+                        cart.click();
                         passCaseWithSC("Click on the Cart Options","cart_success");
 
                     }catch (Exception e){
@@ -95,16 +94,16 @@ public class CartPage extends CommonMethods {
 
 
                 }catch (Exception e) {
-                    failCase("Cart Icon was not Locate ","cart_Icon_success_fail");
+                    failCase("Cart Icon was not Locate ","cartIcon_show_fail");
                 }
 
 
             } catch (Exception e) {
-                failCase("Add to Cart was not Locate ","addCart_fail");
+                failCase("Add to Cart was not Locate ","addToCart_fail");
             }
 
         }catch (Exception e){
-            failCase("Details was not Locate ","details_fail");
+            failCase("Details was not Locate ","book_name_click_fail");
 
         }
 
