@@ -33,7 +33,7 @@ public class CartPage extends CommonMethods {
     @FindBy(xpath = "(//img[@src='https://www.prothoma.com/images/frontend/cart_bag.png'])[1]")
     WebElement cartIcon;
 
-    @FindBy(xpath = "(//a[@class='btn btn-primary bag']")
+    @FindBy(xpath = "(//a[@href='https://www.prothoma.com/carts' and text()='কার্ট দেখুন'])[1]")
     WebElement cart;
 
 

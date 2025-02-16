@@ -22,12 +22,12 @@ public class HomePage_Test extends CommonMethods {
         sleep();
 
         extent = ExtentFactory.getInstance();
-        parentTest = extent.createTest("<p style=\"color:blue; font-size:14px\"><b>Menu</b></p>").assignAuthor("Jasmin Akter").assignDevice("Windows");
+        parentTest = extent.createTest("<p style=\"color:blue; font-size:14px\"><b>Author</b></p>").assignAuthor("Jasmin Akter").assignDevice("Windows");
     }
 
     @Test
     public void prothoma() throws IOException, InterruptedException {
-        childTest = parentTest.createNode("<p style=\"color:blue; font-size:14px\"><b>Menu Click</b></p>");
+        childTest = parentTest.createNode("<p style=\"color:blue; font-size:14px\"><b>Home Page Click</b></p>");
         HomePage homePage = new HomePage(childTest);
         homePage.selectAuthor();
     }

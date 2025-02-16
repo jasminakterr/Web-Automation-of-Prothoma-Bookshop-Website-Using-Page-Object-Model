@@ -22,12 +22,12 @@ public class CartPage_Test extends CommonMethods {
         //sleep();
 
         extent = ExtentFactory.getInstance();
-        parentTest = extent.createTest("<p style=\"color:Green; font-size:14px\"><b>Details</b></p>").assignAuthor("Jasmin Akter").assignDevice("Windows");
+        parentTest = extent.createTest("<p style=\"color:Green; font-size:14px\"><b>Cart Page</b></p>").assignAuthor("Jasmin Akter").assignDevice("Windows");
     }
 
     @Test
     public void prothoma() throws IOException, InterruptedException {
-        childTest = parentTest.createNode("<p style=\"color:Green; font-size:14px\"><b>Details Page Click</b></p>");
+        childTest = parentTest.createNode("<p style=\"color:Green; font-size:14px\"><b>Cart Page Click</b></p>");
         CartPage cartPage = new CartPage(childTest);
         cartPage.cart();
 
