@@ -43,8 +43,7 @@ Maven will automatically download the required dependencies specified in the pom
 By default, Maven generates test reports in the `target/surefire-reports` directory. You can find the following files:
 test.xml: Test results in XML format.
 *.txt: Text-based test output.
-
 For more detailed reporting, you can integrate `ExtentReports` into my project.
 
-![P1](https://github.com/user-attachments/assets/012f3379-0854-4363-9c8d-7353cd92c035)
-![p2](https://github.com/user-attachments/assets/47043ae2-519b-43c1-9634-d7964aec9c09)
+![Screenshot1](https://github.com/user-attachments/assets/e454eabb-d12d-471c-a9ce-be603b3c4647)
+![Screenshot2](https://github.com/user-attachments/assets/11c409f7-74ed-4ef4-b82e-3d028fd2cc4d)
